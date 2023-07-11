@@ -57,7 +57,7 @@ function submitBook() {
   let title = document.querySelector("#title").value,
     author = document.querySelector("#author").value,
     pages = document.querySelector("#pages").value,
-    read = document.querySelector("#read").value;
+    read = document.querySelector("#read").checked;
 
   addBookToLibrary(title, author, pages, read);
 }
