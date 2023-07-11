@@ -10,6 +10,20 @@
   <body>
     <div class="container">
       <div class="book-container"></div>
+      <div class="button-container">
+        <button class="add-book-btn">Add Book</button>
+        <form class="add-book-form invisible">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" />
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" />
+          <label for="pages">Pages</label>
+          <input type="number" name="pages" id="pages" />
+          <label for="read">Read</label>
+          <input type="checkbox" name="read" id="read" />
+          <input type="button" value="submit" id="submit-btn" />
+        </form>
+      </div>
     </div>
   </body>
 </html>

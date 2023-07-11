@@ -37,3 +37,26 @@
   font-size: 16px;
   font-weight: bold;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.add-book-btn {
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  border: 2px solid black;
+  font-size: 16px;
+}
+.add-book-form {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+.invisible {
+  display: none;
+}
