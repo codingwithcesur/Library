@@ -6,6 +6,8 @@ const submitBtn = document.querySelector("#submit-btn");
 addBookBtn.addEventListener("click", createBook);
 submitBtn.addEventListener("click", submitBook);
 
+let counter = 0;
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -40,12 +42,21 @@ function displayBook() {
   book.appendChild(bookAuthor);
   book.appendChild(bookPages);
   book.appendChild(bookRead);
+  let removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove-btn");
+  removeBtn.textContent = "Remove";
+  book.appendChild(removeBtn);
+  removeBtn.addEventListener("click", () => {
+    book.remove();
+  });
+
   for (let i = 0; i < myLibrary.length; i++) {
     bookTitle.textContent = myLibrary[i].title;
     bookAuthor.textContent = `By : ${myLibrary[i].author}`;
     bookPages.textContent = `${myLibrary[i].pages} pages`;
     bookRead.textContent = `Did read : ${myLibrary[i].read}`;
   }
+  counter++;
 }
 
 function createBook() {

@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-family: "Roboto", sans-serif;
 }
 .book-container {
@@ -9,6 +9,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 10px;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .book {
@@ -36,12 +40,6 @@
 .book-read {
   font-size: 16px;
   font-weight: bold;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
 }
 
 .add-book-btn {
