@@ -42,18 +42,26 @@ function displayBook() {
   removeBtn.addEventListener("click", () => {
     book.remove();
   });
-
+  document.querySelector(".book-container").appendChild(addBookBtn);
+  document.querySelector(".book-container").appendChild(addBookForm);
   for (let i = 0; i < myLibrary.length; i++) {
     bookTitle.textContent = myLibrary[i].title;
-    bookAuthor.textContent = myLibrary[i].author;
-    bookPages.textContent = myLibrary[i].pages;
+    bookAuthor.textContent = `By : ${myLibrary[i].author}`;
+    bookPages.textContent = `${myLibrary[i].pages} pages`;
     bookRead.textContent = `Did read : ${myLibrary[i].read}`;
+    if (myLibrary[i].read === true) {
+      bookRead.style.backgroundColor = "green";
+    } else {
+      bookRead.style.backgroundColor = "red";
+    }
     bookRead.addEventListener("click", () => {
       if (myLibrary[i].read === true) {
         myLibrary[i].read = false;
+        bookRead.style.backgroundColor = "red";
         bookRead.textContent = `Did read : ${myLibrary[i].read}`;
       } else {
         myLibrary[i].read = true;
+        bookRead.style.backgroundColor = "green";
         bookRead.textContent = `Did read : ${myLibrary[i].read}`;
       }
     });

@@ -1,3 +1,6 @@
+body {
+  background-color: #101820ff;
+}
 .container {
   width: 100%;
   display: flex;
@@ -10,24 +13,27 @@
   flex-wrap: wrap;
   margin: 10px;
 }
-.button-container {
+/* .button-container {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .book {
-  width: 300px;
-  height: 300px;
-  margin: 0px 20px 20px 0px;
-  border: 1px solid black;
+  width: 260px;
+  height: 290px;
+  margin: 0px 20px 20px 20px;
+  border: 4px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fee715ff;
+  color: #101820ff;
 }
 .book-title {
   font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
+  border-bottom: 2px solid black;
 }
 .book-author {
   font-size: 16px;
@@ -40,21 +46,52 @@
 .book-read {
   font-size: 16px;
   font-weight: bold;
+  width: auto;
+  height: 30px;
+}
+.remove-btn {
+  height: 30px;
+  width: 100%;
+  margin-top: 30px;
+  border: 2px solid black;
+  font-size: 16px;
+  background-color: rgb(73, 54, 54);
+  color: rgb(184, 180, 180);
+  font-weight: bold;
+  height: 60px;
 }
 
 .add-book-btn {
-  height: 50px;
-  width: 100px;
-  margin: 10px;
+  height: 80px;
+  width: 160px;
+  margin: 0px 20px 0px 20px;
   border: 2px solid black;
   font-size: 16px;
+  background-color: #fee715ff;
+  color: #101820ff;
+  font-weight: bold;
 }
 .add-book-form {
   width: 150px;
   height: 150px;
   margin: 10px;
+  color: #fee715ff;
 }
 
 .invisible {
   display: none;
+}
+
+input {
+  background-color: #fee715ff;
+  border: 2px solid black;
+  font-size: 16px;
+  margin: 5px;
+  width: 150px;
+  color: #101820ff;
+}
+#read {
+  width: 20px;
+  height: 14px;
+  margin: 4px;
 }
