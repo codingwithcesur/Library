@@ -3,11 +3,6 @@ const addBookBtn = document.querySelector(".add-book-btn");
 const addBookForm = document.querySelector(".add-book-form");
 const submitBtn = document.querySelector("#submit-btn");
 
-addBookBtn.addEventListener("click", createBook);
-submitBtn.addEventListener("click", submitBook);
-
-let counter = 0;
-
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -20,16 +15,12 @@ function addBookToLibrary(title, author, pages, read) {
   displayBook();
 }
 
-function toggleInvisibility() {
-  addBookBtn.classList.toggle("invisible");
-  addBookForm.classList.toggle("invisible");
-}
 function displayBook() {
   let book = document.createElement("div"),
     bookTitle = document.createElement("h2"),
     bookAuthor = document.createElement("h3"),
     bookPages = document.createElement("h3"),
-    bookRead = document.createElement("h3");
+    bookRead = document.createElement("button");
 
   book.classList.add("book");
   bookTitle.classList.add("book-title");
@@ -42,21 +33,36 @@ function displayBook() {
   book.appendChild(bookAuthor);
   book.appendChild(bookPages);
   book.appendChild(bookRead);
+
   let removeBtn = document.createElement("button");
   removeBtn.classList.add("remove-btn");
   removeBtn.textContent = "Remove";
   book.appendChild(removeBtn);
+
   removeBtn.addEventListener("click", () => {
     book.remove();
   });
 
   for (let i = 0; i < myLibrary.length; i++) {
     bookTitle.textContent = myLibrary[i].title;
-    bookAuthor.textContent = `By : ${myLibrary[i].author}`;
-    bookPages.textContent = `${myLibrary[i].pages} pages`;
+    bookAuthor.textContent = myLibrary[i].author;
+    bookPages.textContent = myLibrary[i].pages;
     bookRead.textContent = `Did read : ${myLibrary[i].read}`;
+    bookRead.addEventListener("click", () => {
+      if (myLibrary[i].read === true) {
+        myLibrary[i].read = false;
+        bookRead.textContent = `Did read : ${myLibrary[i].read}`;
+      } else {
+        myLibrary[i].read = true;
+        bookRead.textContent = `Did read : ${myLibrary[i].read}`;
+      }
+    });
   }
-  counter++;
+}
+
+function toggleInvisibility() {
+  addBookBtn.classList.toggle("invisible");
+  addBookForm.classList.toggle("invisible");
 }
 
 function createBook() {
@@ -72,3 +78,5 @@ function submitBook() {
 
   addBookToLibrary(title, author, pages, read);
 }
+addBookBtn.addEventListener("click", createBook);
+submitBtn.addEventListener("click", submitBook);
