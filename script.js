@@ -95,13 +95,19 @@ function createBook() {
 }
 
 function submitBook() {
-  toggleInvisibility();
-  // document.querySelectorAll(".card").classList.remove("invisible");
   let title = document.querySelector("#title").value,
     author = document.querySelector("#author").value,
     pages = document.querySelector("#pages").value,
     read = document.querySelector("#read").checked;
-  addBookToLibrary(title, author, pages, read);
+
+  // document.querySelectorAll(".card").classList.remove("invisible");
+
+  if (title === "" || author === "" || pages === "") {
+    alert("Please fill all the fields");
+  } else {
+    toggleInvisibility();
+    addBookToLibrary(title, author, pages, read);
+  }
 }
 addBookBtn.addEventListener("click", createBook);
 submitBtn.addEventListener("click", submitBook);
